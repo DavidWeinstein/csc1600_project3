@@ -210,7 +210,20 @@ public class SortComparisons
 	public void otherShellSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-      // using the method incrementalInsertionSort.
+	  // using the method incrementalInsertionSort.
+	  int n = a.length;
+	  int space = n/2;
+	  while (space > 0) {
+		if (space % 2 == 0) {
+			space = space + 1;
+		}
+		  counter++;
+		  for (int i = first; i < first + space - 1; i++) {
+			  counter++;
+			  incrementalInsertionSort(a, first, last, space);
+		  }
+		  space = space / 2;
+	  }
 
 
 
