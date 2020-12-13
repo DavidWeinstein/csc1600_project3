@@ -121,7 +121,13 @@ public class SortComparisons
 	public void insertionSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-      // using the private method insertInOrder.
+	  // using the private method insertInOrder.
+	  if (first < last) {
+		  counter++;
+		  insertionSort(a, first, last - 1);
+
+		  insertInOrder(a[last], a, first, last-1);
+	  }
 
 
 	} // end insertionSort
@@ -130,7 +136,19 @@ public class SortComparisons
 	// array, between first and last.
 	private void insertInOrder(int element, int[] a, int first, int last)
 	{
-      // ADD CODE HERE TO COMPLETE THIS METHOD 
+	  // ADD CODE HERE TO COMPLETE THIS METHOD 
+	  if (element >= a[last]) {
+		  counter++;
+		  a[last+1] = element;
+	  } else if (first < last) {
+		  counter++;
+		  a[last+1] = a[last];
+		  insertInOrder(element, a, first, last-1);
+	  } else {
+		  counter++;
+		  a[last+1] = a[last];
+		  a[last] = element;
+	  }
 
 
 	} // end insertInOrder
