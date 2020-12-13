@@ -84,12 +84,14 @@ public class SortComparisonsWeinstein
    {
 
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-	  // using the private method getIndexOfSmallest.
+      // using the private method getIndexOfSmallest.
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  for (int i = 0; i < a.length; i++) {
 		  int nextSmallestIndex = getIndexOfSmallest(a, first, last);
 		  counter++;
 		  swap(a, i, nextSmallestIndex);
-	  }
+      }
+      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 
 
    } // end selectionSort
@@ -100,7 +102,8 @@ public class SortComparisonsWeinstein
    // a[first], a[first + 1], . . . , a[last].
    private int getIndexOfSmallest(int[] a, int first, int last)
    {
-	  // ADD CODE HERE TO COMPLETE THIS METHOD 
+      // ADD CODE HERE TO COMPLETE THIS METHOD 
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  int min = a[first];
 	  int indexOfMin = first;
 	  for (int i = first + 1; i <= last; i++) {
@@ -110,7 +113,8 @@ public class SortComparisonsWeinstein
 			  indexOfMin = i;
 		  }
 	  }
-	  return indexOfMin;
+      return indexOfMin;
+      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
    } // end getIndexOfSmallest
 
 	/** Sorts using the recursive Insertion Sort algorithm.
@@ -121,12 +125,14 @@ public class SortComparisonsWeinstein
 	public void insertionSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-	  // using the private method insertInOrder.
+      // using the private method insertInOrder.
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  if (first < last) {
 		  counter++;
 		  insertionSort(a, first, last - 1);
 		  insertInOrder(a[last], a, first, last-1);
-	  }
+      }
+      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 
 
 	} // end insertionSort
@@ -135,7 +141,8 @@ public class SortComparisonsWeinstein
 	// array, between first and last.
 	private void insertInOrder(int element, int[] a, int first, int last)
 	{
-	  // ADD CODE HERE TO COMPLETE THIS METHOD 
+      // ADD CODE HERE TO COMPLETE THIS METHOD 
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  if (element >= a[last]) {
 		  counter++;
 		  a[last+1] = element;
@@ -147,8 +154,8 @@ public class SortComparisonsWeinstein
 		  counter++;
 		  a[last+1] = a[last];
 		  a[last] = element;
-	  }
-
+      }
+      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 
 	} // end insertInOrder
 
@@ -160,7 +167,8 @@ public class SortComparisonsWeinstein
 	public void shellSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-	  // using the private method incrementalInsertionSort.
+      // using the private method incrementalInsertionSort.
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  int n = a.length;
 	  int space = n/2;
 	  while (space > 0) {
@@ -170,7 +178,8 @@ public class SortComparisonsWeinstein
 			  incrementalInsertionSort(a, first, last, space);
 		  }
 		  space = space / 2;
-	  }
+      }
+      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 
 	} // end shellSort
 
@@ -186,7 +195,8 @@ public class SortComparisonsWeinstein
    */
 	private void incrementalInsertionSort(int[] a, int first, int last, int space)
 	{
-	  // ADD CODE HERE TO COMPLETE THIS METHOD 
+      // ADD CODE HERE TO COMPLETE THIS METHOD 
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  for (int unsorted = first + space; unsorted < last; unsorted += space) {
 		  counter++;
 		  int nextToInsert = a[unsorted];
@@ -197,7 +207,8 @@ public class SortComparisonsWeinstein
 			  index = index - space;
 		  }
 		  a[index + space] = nextToInsert;
-	  }
+      }
+      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 
 
 	} // end incrementalInsertionSort
@@ -210,7 +221,8 @@ public class SortComparisonsWeinstein
 	public void otherShellSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-	  // using the method incrementalInsertionSort.
+      // using the method incrementalInsertionSort.
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  int n = a.length;
 	  int space = n/2;
 	  while (space > 0) {
@@ -223,8 +235,8 @@ public class SortComparisonsWeinstein
 			  incrementalInsertionSort(a, first, last, space);
 		  }
 		  space = space / 2;
-	  }
-
+      }
+      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 
 
 	} // end otherShellSort
@@ -237,7 +249,8 @@ public class SortComparisonsWeinstein
 	public void bubbleSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-	  // using the private method order.
+      // using the private method order.
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  for (int i = first; i < a.length - 1; i++) {
 		  counter++;
 		  for (int j = first; j < a.length - i - 1; j++) {
@@ -248,19 +261,19 @@ public class SortComparisonsWeinstein
 				  counter++;
 			  }
 		  }
-	  }
-
+      }
+      //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 	} // end bubbleSort
 	
    // Swaps the array the array entries a[i] and a[j] if necessary
 	private void order(int[] a, int i, int j)
 	{
-	  // ADD CODE HERE TO COMPLETE THIS METHOD 
-
+      // ADD CODE HERE TO COMPLETE THIS METHOD 
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 		int temp = a[i];
 		a[i] = a[j];
-		a[j] = temp;
-
+        a[j] = temp;
+        //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 
 	}  // end order 
    // -------------------------------------------------------------------------------
@@ -273,7 +286,8 @@ public class SortComparisonsWeinstein
 	public void betterBubbleSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-	  // using the private method swap.
+      // using the private method swap.
+      // >>>>>>>>>> ADDED CODE >>>>>>>>>>>>>>>>>>>>>>>> (Beginning of the code added)
 	  boolean swapped;
 	  for (int i = first; i < a.length - 1; i++) {
 		  swapped = false;
@@ -290,7 +304,7 @@ public class SortComparisonsWeinstein
 			break;
 		}
 	}
-
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< (End of the code added)
 
 	}  // end betterBubbleSort
 
