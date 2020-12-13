@@ -125,7 +125,6 @@ public class SortComparisons
 	  if (first < last) {
 		  counter++;
 		  insertionSort(a, first, last - 1);
-
 		  insertInOrder(a[last], a, first, last-1);
 	  }
 
@@ -161,8 +160,17 @@ public class SortComparisons
 	public void shellSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-      // using the private method incrementalInsertionSort.
-
+	  // using the private method incrementalInsertionSort.
+	  int n = a.length;
+	  int space = n/2;
+	  while (space > 0) {
+		  counter++;
+		  for (int i = first; i < first + space - 1; i++) {
+			  counter++;
+			  incrementalInsertionSort(a, first, last, space);
+		  }
+		  space = space / 2;
+	  }
 
 	} // end shellSort
 
@@ -178,7 +186,18 @@ public class SortComparisons
    */
 	private void incrementalInsertionSort(int[] a, int first, int last, int space)
 	{
-      // ADD CODE HERE TO COMPLETE THIS METHOD 
+	  // ADD CODE HERE TO COMPLETE THIS METHOD 
+	  for (int unsorted = first + space; unsorted < last; unsorted += space) {
+		  counter++;
+		  int nextToInsert = a[unsorted];
+		  int index = unsorted - space;
+		  while (index >= first && nextToInsert < a[index]) {
+			  counter++;
+			  a[index + space] = a[index];
+			  index = index - space;
+		  }
+		  a[index + space] = nextToInsert;
+	  }
 
 
 	} // end incrementalInsertionSort
