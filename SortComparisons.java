@@ -84,7 +84,12 @@ public class SortComparisons
    {
 
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-      // using the private method getIndexOfSmallest.
+	  // using the private method getIndexOfSmallest.
+	  for (int i = 0; i < a.length; i++) {
+		  int nextSmallestIndex = getIndexOfSmallest(a, first, last);
+		  counter++;
+		  swap(a, i, nextSmallestIndex);
+	  }
 
 
    } // end selectionSort
@@ -95,9 +100,17 @@ public class SortComparisons
    // a[first], a[first + 1], . . . , a[last].
    private int getIndexOfSmallest(int[] a, int first, int last)
    {
-      // ADD CODE HERE TO COMPLETE THIS METHOD 
-
-
+	  // ADD CODE HERE TO COMPLETE THIS METHOD 
+	  int min = a[first];
+	  int indexOfMin = first;
+	  for (int i = first + 1; i <= last; i++) {
+		counter++;
+		  if (a[i] < min) {
+			  min = a[i];
+			  indexOfMin = i;
+		  }
+	  }
+	  return indexOfMin;
    } // end getIndexOfSmallest
 
 	/** Sorts using the recursive Insertion Sort algorithm.
