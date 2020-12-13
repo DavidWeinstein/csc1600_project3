@@ -237,15 +237,26 @@ public class SortComparisons
 	public void bubbleSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-      // using the private method order.
-
+	  // using the private method order.
+	  for (int i = first; i < a.length; i++) {
+		  for (int j = first + 1; j < a.length; j++) {
+			  counter++;
+			  if (a[i] > a[j]) {  
+				  order(a, i, j);
+			  }
+		  }
+	  }
 
 	} // end bubbleSort
 	
    // Swaps the array the array entries a[i] and a[j] if necessary
 	private void order(int[] a, int i, int j)
 	{
-      // ADD CODE HERE TO COMPLETE THIS METHOD 
+	  // ADD CODE HERE TO COMPLETE THIS METHOD 
+
+		int temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
 
 
 	}  // end order 
