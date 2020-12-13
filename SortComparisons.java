@@ -238,11 +238,14 @@ public class SortComparisons
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
 	  // using the private method order.
-	  for (int i = first; i < a.length; i++) {
-		  for (int j = first + 1; j < a.length; j++) {
+	  for (int i = first; i < a.length - 1; i++) {
+		  counter++;
+		  for (int j = first; j < a.length - i - 1; j++) {
 			  counter++;
-			  if (a[i] > a[j]) {  
-				  order(a, i, j);
+			  if (a[j] > a[j+1]) { 
+				  counter++;
+				  order(a, j, j+1);
+				  counter++;
 			  }
 		  }
 	  }
@@ -270,7 +273,24 @@ public class SortComparisons
 	public void betterBubbleSort(int[] a, int first, int last)
 	{
       // ADD CODE HERE TO COMPLETE THIS METHOD 
-      // using the private method swap.
+	  // using the private method swap.
+	  boolean swapped;
+	  for (int i = first; i < a.length - 1; i++) {
+		  swapped = false;
+		counter++;
+		for (int j = first; j < a.length - i - 1; j++) {
+			counter++;
+			if (a[j] > a[j+1]) { 
+				counter++;
+				swap(a, j, j+1);
+				swapped = true;
+			}
+		}
+		if (!swapped) {
+			break;
+		}
+	}
+
 
 	}  // end betterBubbleSort
 
