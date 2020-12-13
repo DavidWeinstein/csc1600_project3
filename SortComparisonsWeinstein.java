@@ -4,7 +4,24 @@ import java.util.Random;
    This class compares the efficiency of Selection Sort, Insertion Sort,
    Shell Sort, Other Shell Sort, Bubble Sort, and Better Bubble Sort.
 
-   @author 
+   @author modified by David Weinstein
+   Date: 12/13/2020
+
+   Pseudocode:
+   1. Initialize class field variables for counter, random, and empty arrays to test
+   2. Constructor sets counter to 0, a new Random r, and calls testComparisons()
+   3. testComparisons will popuate lists of size 2 up to 4096 by multiplicating, and also display reults of sorts
+   4. Sorting method selectinSort implementation
+   5. Sorting helper method getIndexOfSmallest
+   6. Sorting method insertionSort implemented
+   7. Sorting helper method insertInOrder
+   8. Sorting method shellSort implemented
+   9. Sorting helper method incrementalInsertInOrder
+   10. Sorting method otherShellSort implemented
+   11. Sorting method bubbleSort implemented
+   12. Sorting helper method order 
+   13. Sorting method betterBubbleSort implemented
+   14. Sorting helper method swap
 */
 
 public class SortComparisonsWeinstein
@@ -13,6 +30,7 @@ public class SortComparisonsWeinstein
 	private Random r;
 	private int[] list1, list2, list3, list4, list5, list6;
 
+    // constuctor
 	public SortComparisonsWeinstein()
 	{
 		counter = 0;
@@ -78,7 +96,8 @@ public class SortComparisonsWeinstein
    /** Selection Sort
        Sorts the first n objects in an array into ascending order.
        @param a  An array of Comparable objects.
-       @param n  An integer > 0. 
+       @param first first index in array
+       @param last last index in array 
    */
    public void selectionSort(int[] a, int first, int last)
    {

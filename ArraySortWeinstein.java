@@ -1,6 +1,6 @@
 /**
    A class of static sorting algorithms (only countingSort is included here).
-   @author David Weinstein 
+   @author modified by David Weinstein 
    Date: 12/13/2020
 
    Pseudocode: 
